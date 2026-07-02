@@ -1,22 +1,44 @@
 """Number system in Python"""
 
-number=int(input("Enter the number : "))
+while True:
+    print("\nNUMBER SYSTEM MENU")
+    print("\n1.Decimal to Binary")
+    print("\n2.Decimal to Octal")
+    print("\n3.Decimal to Hexadecimal")
+    print("\n4.Binary to Decimal")
+    print("\n5.Octal to Decimal")
+    print("\n6.Hexadecimal to Decimal")
+    print("\n7.Exit")
 
-while(True):
-    ch=int(input("Enter your choice :"))
-    #Decimal to binary
+    ch= int(input("Enter your choice: "))
+
     if ch==1:
-        print(bin(number))
-    #Decimal to octal
+        n = int(input("Enter Decimal Number: "))
+        print("Binary =", bin(n))
+
     elif ch==2:
-        print(oct(number))
-    #decimal to hexa
+        n = int(input("Enter Decimal Number: "))
+        print("Octal =", oct(n))
+
     elif ch==3:
-        print(hex(number))
+        n = int(input("Enter Decimal Number: "))
+        print("Hexadecimal =", hex(n))
+
     elif ch==4:
-        num=chr(number)
-        print(num)
-    elif ch==0:
+        b = input("Enter Binary Number: ")
+        print("Decimal =", int(b, 2))
+
+    elif ch==5:
+        o = input("Enter Octal Number: ")
+        print("Decimal =", int(o, 8))
+
+    elif ch==6:
+        h = input("Enter Hexadecimal Number: ")
+        print("Decimal =", int(h, 16))
+
+    elif ch==7:
+        print("EXIT.......")
         break
+
     else:
-        print("Invalid input")
+        print("Invalid Choice! ")
