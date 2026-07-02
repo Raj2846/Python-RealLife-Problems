@@ -24,7 +24,7 @@ while True:
         print("Total Electricity Bill = ₹", bill)
 
     elif choice == 2:
-        print("Exit......")
+        print("Exiting......")
         break
 
     else:
