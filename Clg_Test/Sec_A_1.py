@@ -192,3 +192,63 @@ def hashing_based(lst):
             visited.add(i)
             
 hashing_based(lst)
+
+"""Q5. The 4 p.m. Slowdown at Meridian Corp  (OS — Virtual Memory)	[5 Marks]
+SCENARIO:  Employees at Meridian Corp’s Ahmedabad office complain that their 8 GB RAM workstations become painfully slow every day around 4 p.m., when they simultaneously run a browser with 40 tabs, a video call, Excel with large workbooks, and an ERP client. The disk-activity LED stays almost permanently lit during the slowdown. As the newly hired systems analyst, you must explain the phenomenon to non-technical managers.
+
+Virtual Memory and Paging
+When RAM becomes full, the operating system moves less frequently used data from RAM to a part of the hard disk/SSD called the page file (swap space).
+This process is called paging.
+When the data is needed again, it is loaded back into RAM from the disk.
+
+Thus, the computer continues to work, although accessing the disk is much slower than accessing RAM.
+
+
+Condition Indicated by the Constantly Lit Disk LED
+The condition is called Thrashing.
+
+Explanation:
+
+Thrashing occurs when the system spends most of its time swapping pages between RAM and disk instead of executing programs.
+Since the applications require much more than the available 8 GB RAM, the operating system continuously performs paging.
+This causes the disk activity LED to remain constantly lit and makes the computer extremely slow.
+
+
+
+Remedies (2 Marks)
+
+Hardware Remedy:
+
+Increase RAM (e.g., from 8 GB to 16 GB or 32 GB).
+Justification: More RAM reduces the need for paging, improving system performance.
+
+Software/OS-Level Remedy:
+
+Close unnecessary applications or browser tabs (or optimize virtual memory settings).
+Justification: Reducing memory usage decreases paging and prevents thrashing, resulting in smoother performance.
+"""
+
+
+"""Q6. The Incubator Review  (Research Methods — Hypothesis Design)"""
+"""(a) Hypotheses (2 Marks)
+
+Null Hypothesis (H₀):
+
+The dark mode feature does not increase the time students spend on the study app.
+
+Alternative Hypothesis (H₁):
+
+The dark mode feature increases the time students spend on the study app.
+
+
+(b) Variables (2 Marks)
+Independent Variable: Dark mode feature (Enabled/Disabled)
+Dependent Variable: Time spent by students on the study app
+Confounding Variable: Exam season (students may use the app more during exams regardless of dark mode)
+
+(c) Data Collection Design (2 Marks)
+
+Design: A/B Experiment
+
+Justification: Randomly assign one group of users to dark mode (Group A) and another to normal mode (Group B), then compare the average time spent to determine whether dark mode increases usage.
+"""
