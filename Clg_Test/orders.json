@@ -1,0 +1,30 @@
+[
+    [
+        {
+            "type": "Food",
+            "name": "Paneer Tikka",
+            "base_price": 500,
+            "chef_special": true
+        },
+        {
+            "type": "Beverage",
+            "name": "Coffee",
+            "base_price": 150,
+            "chef_special": false
+        }
+    ],
+    [
+        {
+            "type": "Food",
+            "name": "Pizza",
+            "base_price": 1800,
+            "chef_special": false
+        },
+        {
+            "type": "Beverage",
+            "name": "Juice",
+            "base_price": 300,
+            "chef_special": false
+        }
+    ]
+]
