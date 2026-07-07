@@ -190,35 +190,158 @@ def dfs(graph, node, visited):
 """
 🤼 PRO KABADDI + IPL — CROSS-SPORT PERFORMANCE MATRIX   SportzIQ is an Ahmedabad-based sports analytics startup (incubated at iHub Gujarat) that tracks athlete performance across 3 metrics: Attack Score, Defense Score, and Fitness Score — each on a scale of 0–10. They track 3 athletes across Kabaddi (Sachin, Pardeep, Pawan) and use a Weight Matrix to compute an Overall Performance Index for selection.
 """
-import numpy as np
+# import numpy as np
 
 
-T = np.array([[8, 7, 9], [9, 6, 8], [7, 9, 7]])
-W = np.array([0.4, 0.35, 0.25]) 
-s = [[8, 7, 9], [9, 6, 8], [7, 9, 7]]
-p = [0.4, 0.35, 0.25]
+# T = np.array([[8, 7, 9], [9, 6, 8], [7, 9, 7]])
+# W = np.array([0.4, 0.35, 0.25]) 
+# s = [[8, 7, 9], [9, 6, 8], [7, 9, 7]]
+# p = [0.4, 0.35, 0.25]
 
-r=[((s[0][0]*p[0])+(s[0][1]*p[1])+(s[0][2]*p[2])),
-   ((s[1][0]*p[0])+(s[1][1]*p[1])+(s[1][2]*p[2])),
-   ((s[2][0]*p[0])+(s[2][1]*p[1])+(s[2][2]*p[2]))
-   ]
+# r=[((s[0][0]*p[0])+(s[0][1]*p[1])+(s[0][2]*p[2])),
+#    ((s[1][0]*p[0])+(s[1][1]*p[1])+(s[1][2]*p[2])),
+#    ((s[2][0]*p[0])+(s[2][1]*p[1])+(s[2][2]*p[2]))
+#    ]
 
-print(r)
+# print(r)
 
-p_norm=[]
-for i in s:
-    temp=[]
-    for j in i:
-        j=round(j/9,2)
-        temp.append(j)
-    p_norm.append(temp)
+# p_norm=[]
+# for i in s:
+#     temp=[]
+#     for j in i:
+#         j=round(j/9,2)
+#         temp.append(j)
+#     p_norm.append(temp)
     
-print(p_norm)
+# print(p_norm)
 
-new_r=[((p_norm[0][0]*p[0])+(p_norm[0][1]*p[1])+(p_norm[0][2]*p[2])),
-   ((p_norm[1][0]*p[0])+(p_norm[1][1]*p[1])+(p_norm[1][2]*p[2])),
-   ((p_norm[2][0]*p[0])+(p_norm[2][1]*p[1])+(p_norm[2][2]*p[2]))
-   ]
-print(new_r)
+# new_r=[((p_norm[0][0]*p[0])+(p_norm[0][1]*p[1])+(p_norm[0][2]*p[2])),
+#    ((p_norm[1][0]*p[0])+(p_norm[1][1]*p[1])+(p_norm[1][2]*p[2])),
+#    ((p_norm[2][0]*p[0])+(p_norm[2][1]*p[1])+(p_norm[2][2]*p[2]))
+#    ]
+# print(new_r)
+
+"""
+Sequence is a board game where players play cards from their hand to place chips on the corresponding squares on the board. A digital version is being built by MCA students. The board has 100 squares (10×10 grid) each with a card value. Players have a hand of 7 cards and need to find which board squares match their cards as quickly as possible. The game engine must also detect if any player has completed a 'Sequence' (5 chips in a row — horizontal, vertical, or diagonal).
+"""
+
+board = [
+    12, 5, 7, 19, 25, 7, 34, 41, 2, 18,
+    9, 27, 14, 7, 33, 45, 10, 22, 7, 50,
+    3, 16, 29, 11, 7, 36, 48, 8, 20, 31,
+    15, 24, 39, 7, 52, 6, 13, 30, 7, 44,
+    21, 4, 17, 26, 35, 7, 40, 49, 23, 32,
+    1, 28, 38, 7, 46, 51, 18, 5, 7, 12,
+    34, 43, 16, 7, 25, 37, 47, 9, 14, 7,
+    20, 33, 11, 24, 36, 50, 2, 7, 29, 42,
+    8, 15, 27, 39, 7, 45, 19, 31, 52, 13,
+    6, 17, 30, 7, 40, 48, 21, 35, 10, 7
+]
+
+inx=[]
+def linear_search(board):
+    for i in range(len(board)):
+        if board[i]==7:
+            inx.append(i)
+    print(inx)
+        
+# linear_search(board)
+
+def sorting_method(lst):
+        #merge sort
+        if len(lst)> 1:
+            mid=len(lst)//2
+            left= lst[:mid]
+            right=lst[mid:]
+            
+            sorting_method(left)
+            sorting_method(right)
+            i=j=k=0
+            
+            while i<len(left) and j<len(right):
+                if left[i] < right[j]:
+                    lst[k]=left[i]
+                    i+=1
+                else:
+                    lst[k] = right[j]
+                    j+=1
+                k+=1
+            print(lst)
+            # this will add the remaining list from i
+            while i< len(left):
+                lst[k]=left[i]
+                i+=1
+                k+=1 
+            print(lst)
+
+            while j<len(right):
+                lst[k]=right[j]
+                j+=1
+                k+=1
+            print(lst)
+
+# print(board)
+
+# sorting_method(board)
+def binary_search_first(board, start, end, target):
+    if start > end:
+        return -1
+
+    mid = (start + end) // 2
+
+    if board[mid] == target:
+        # Check if this is the first occurrence
+        if mid == 0 or board[mid - 1] != target:
+            return mid
+        # Otherwise, search on the left
+        return binary_search_first(board, start, mid - 1, target)
+
+    elif board[mid] < target:
+        return binary_search_first(board, mid + 1, end, target)
+    else:
+        return binary_search_first(board, start, mid - 1, target)
+    
+# ans = binary_search_first(board, 0, len(board)-1, 7)
+
+# if ans != -1:
+#     print("First occurrence of 7 is at index:", ans)
+# else:
+#     print("Card not found")
+    
+lst=[45, 72, 38, 72, 91, 55]    
+sorting_method(lst)
+print(lst)
 
 
+
+def check_horizontal_seq(board,player):
+    row=len(board)
+    col=len(board[0])
+    
+    for i in range(row):
+        count=0
+        for j in range(col):
+            if board[i][j] == player:
+                count+=1
+                
+                if count==5:
+                    return True
+            else:
+                count=0
+    return False
+
+def check_vertical_seq(board,player):
+    row=len(board) #10 as the list contain 10 rows
+    col=len(board[0]) # 10 as the element in the sub list are 10
+    
+    for i in range(col):
+        count=0
+        for j in range(row):
+            if board[i][j] == player:
+                count+=1
+                
+                if count==5:
+                    return True
+            else:
+                count=0
+    return False

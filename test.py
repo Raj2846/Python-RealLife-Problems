@@ -37,7 +37,7 @@ def name_score_sort():
         
         
         
-if __name__ == '__main__':
+def avg_score():
     n = int(input())
     total=0
     count=0
@@ -51,3 +51,75 @@ if __name__ == '__main__':
     score=student_marks[query_name]
     avg=sum(score)/len(score)
     print(f"{avg:.2f}")
+    
+# def mergeSortLst(lst):
+#     if len(lst) <=1 :
+#         return lst
+    
+#     mid=len(lst)//2
+#     leftHalf=lst[:mid]
+#     rightHalf=lst[mid:]
+    
+    
+#     sortedLeft=mergeSortLst(leftHalf)
+#     sortedRight=mergeSortLst(rightHalf)
+    
+#     return merge(sortedLeft,sortedRight)
+
+
+# def merge(left,right):
+#     result=[]
+#     i=j=0
+    
+#     while i <len(left) and j <len(right):
+#         if left[i] < right[j]:
+#             result.append[left[i]]
+#             i+=1
+#         else:
+#             result.append[right[j]]
+#             j+=1
+            
+#         result.extend(left[i:])
+#         result.extend(right[j:])
+        
+#         return result
+        
+            
+# lst=[3,7,6,-10,15,23,55,-13]
+# sortedList=mergeSortLst(lst)
+# print(sortedList)
+
+
+def mergeSort(arr):
+  if len(arr) <= 1:
+    return arr
+
+  mid = len(arr) // 2
+  leftHalf = arr[:mid]
+  rightHalf = arr[mid:]
+
+  sortedLeft = mergeSort(leftHalf)
+  sortedRight = mergeSort(rightHalf)
+
+  return merge(sortedLeft, sortedRight)
+
+def merge(left, right):
+  result = []
+  i = j = 0
+
+  while i < len(left) and j < len(right):
+    if left[i] < right[j]:
+      result.append(left[i])
+      i += 1
+    else:
+      result.append(right[j])
+      j += 1
+
+  result.extend(left[i:])
+  result.extend(right[j:])
+
+  return result
+
+mylist = [3, 7, 6, -10, 15, 23.5, 55, -13]
+mysortedlist = mergeSort(mylist)
+print("Sorted array:", mysortedlist)
