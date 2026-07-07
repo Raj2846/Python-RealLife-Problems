@@ -27,8 +27,8 @@ def load_ipl(filepath):
     return df
 
 
-ipl_df = load_ipl(r"ipl_2026.csv")
-print(ipl_df.head())
+# ipl_df = load_ipl(r"ipl_2026.csv")
+# print(ipl_df.head())
 
 
 """
@@ -173,3 +173,52 @@ def bfs():
                     visited.append((new_r,new_c))
                     queue.append((new_r,new_c))
                     
+def dfs(graph, node, visited):
+
+    if node in visited:
+        return
+
+    print(node)
+
+    visited.add(node)
+
+    for neighbour in graph[node]:
+        dfs(graph, neighbour, visited)
+# visited = set()
+# dfs(graph, start_node, visited)
+
+"""
+🤼 PRO KABADDI + IPL — CROSS-SPORT PERFORMANCE MATRIX   SportzIQ is an Ahmedabad-based sports analytics startup (incubated at iHub Gujarat) that tracks athlete performance across 3 metrics: Attack Score, Defense Score, and Fitness Score — each on a scale of 0–10. They track 3 athletes across Kabaddi (Sachin, Pardeep, Pawan) and use a Weight Matrix to compute an Overall Performance Index for selection.
+"""
+import numpy as np
+
+
+T = np.array([[8, 7, 9], [9, 6, 8], [7, 9, 7]])
+W = np.array([0.4, 0.35, 0.25]) 
+s = [[8, 7, 9], [9, 6, 8], [7, 9, 7]]
+p = [0.4, 0.35, 0.25]
+
+r=[((s[0][0]*p[0])+(s[0][1]*p[1])+(s[0][2]*p[2])),
+   ((s[1][0]*p[0])+(s[1][1]*p[1])+(s[1][2]*p[2])),
+   ((s[2][0]*p[0])+(s[2][1]*p[1])+(s[2][2]*p[2]))
+   ]
+
+print(r)
+
+p_norm=[]
+for i in s:
+    temp=[]
+    for j in i:
+        j=round(j/9,2)
+        temp.append(j)
+    p_norm.append(temp)
+    
+print(p_norm)
+
+new_r=[((p_norm[0][0]*p[0])+(p_norm[0][1]*p[1])+(p_norm[0][2]*p[2])),
+   ((p_norm[1][0]*p[0])+(p_norm[1][1]*p[1])+(p_norm[1][2]*p[2])),
+   ((p_norm[2][0]*p[0])+(p_norm[2][1]*p[1])+(p_norm[2][2]*p[2]))
+   ]
+print(new_r)
+
+
