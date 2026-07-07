@@ -140,3 +140,22 @@ def knight_move(row,col,steps,board_size):
             
 # knight_move(3,3,2,4)
 
+"""
+PRO KABADDI LEAGUE — Raider Performance Analytics   In the Pro Kabaddi League, Gujarat Fortunegiants' star raider Sachin has the following raid points in his last 10 matches: 8, 12, 6, 15, 10, 8, 14, 9, 8, 12. The team's data analyst needs a statistical report for the coach before the finals. The coach also wants to know the probability that Sachin scores MORE than 10 points in the next match, based on his historical data.
+
+Calculate: (a) Mean, Median, and Mode of Sachin's raid points. Which measure would the coach trust most to predict next match performance — justify your answer. (b) Variance and Standard Deviation. A low standard deviation means what about Sachin's performance consistency? (c) Based on historical data, what is the empirical probability that Sachin scores more than 10 points? What is the probability he scores exactly 8 points? (d) If the team plays 3 independent matches, what is the probability Sachin scores >10 in at least 2 of them? Use your answer from (c).
+
+"""
+# import pandas as pd
+# sachine=pd.DataFrame([8, 12, 6, 15, 10, 8, 14, 9, 8, 12]) #10.2
+# print(sachine.mean())
+# print(sachine.median())
+# print(sachine.mode())
+
+
+"""
+The Computer as a Card Player   In the card game 'Judgement', each player is dealt 5 cards and must predict exactly how many tricks they will win. A computer program playing Judgement needs to: store all 52 cards in memory, track each player's hand (5 cards), process the current trick (4 cards on the table), and make a prediction using logic rules. The CS teacher uses this as an analogy to explain computer memory hierarchy to students.
+
+Answer using the Judgement card game as your context throughout: (a) Map the card game's data to the memory hierarchy — which game data would be stored in Registers, Cache, RAM, and Hard Disk respectively, and why? (b) The program processes one trick at a time. Explain how the CPU's fetch-decode-execute cycle applies to processing a single card play. (c) If the program stores all 52 cards as 1 byte each, 4 players × 5 cards in hands, and 4 cards in current trick — calculate total memory used. If RAM has 8 MB available, how many simultaneous game sessions can run?
+
+"""
