@@ -92,4 +92,51 @@ WHERE goal_type <> 'Own Goal'
 GROUP BY player_name, country;
 """
 
+"""
+The Knight's Journey   In chess, a Knight moves in an 'L' shape — 2 squares in one direction and 1 square perpendicular (or vice versa). On a standard 8×8 board, given the Knight's current position as (row, col), it can have up to 8 possible next moves. A Computer Science student is asked in a technical interview: 'Given a Knight at position (3,3) on a 4×4 board, use recursion to find all positions the Knight can reach in exactly 2 moves.'
+
+(a) List all 8 possible move offsets for a Knight as (row_delta, col_delta) pairs. (b) Write a recursive Python function knight_moves(row, col, steps, board_size) that prints all valid positions the knight can reach in exactly 'steps' moves — validate board boundaries. (c) Trace the recursion for knight_moves(3, 3, 2, 4) — show the recursion tree for the first 2 branches only. What is the maximum number of leaf nodes in the full recursion tree and why?
+
+
+#{(1,2),(2,1),(1,4),(4,1)}
+this are the posibilities
+
+Question to ask for recursion:
+What does one function call represent?
+What is the smallest problem? (Base case)
+How can I reduce the problem? (Usually n-1, steps-1, index+1, etc.)
+What are my choices? (Loop through all possibilities.)
+When do I stop?
+"""
+
+moves = [
+    (-2,-1),
+    (-2,1),
+
+    (-1,-2),
+    (-1,2),
+
+    (1,-2),
+    (1,2),
+
+    (2,-1),
+    (2,1)
+]
+
+def knight_move(row,col,steps,board_size):
+    
+    #base condition
+    if steps==0:
+        print(row,col)
+        return
+    
+    for dr,dc in moves:
+        new_row = row + dr
+        new_col = col + dc
+        
+        #checking wether the new row and column are on the board size or not    
+        if 1 <= new_row <= board_size and 1 <= new_col <= board_size:
+            knight_move(new_row,new_col,steps-1,board_size)
+            
+# knight_move(3,3,2,4)
 
