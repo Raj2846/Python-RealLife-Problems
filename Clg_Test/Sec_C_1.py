@@ -147,13 +147,100 @@ class OrderQueue :
             json.dump(data, file, indent=4)
             
             
-queue = OrderQueue()
+# queue = OrderQueue()
 
-queue.enqueue(Order(101, "CASH"))
-queue.enqueue(Order(102, "PRE-PAID"))
-queue.enqueue(Order(103, "PRE-PAID"))
-queue.enqueue(Order(104, "CASH"))
+# queue.enqueue(Order(101, "CASH"))
+# queue.enqueue(Order(102, "PRE-PAID"))
+# queue.enqueue(Order(103, "PRE-PAID"))
+# queue.enqueue(Order(104, "CASH"))
 
-print(queue.dequeue().order_id)
-print(queue.dequeue().order_id)
-print(queue.dequeue().order_id)
+# print(queue.dequeue().order_id)
+# print(queue.dequeue().order_id)
+# print(queue.dequeue().order_id)
+
+"""
+Model the 30-zone festival map as a weighted graph. Name and outline the algorithm that finds the fastest route from stall zone to customer zone, state its complexity with a binary heap, and explain in two lines how your system should react when an event temporarily closes a path (edge deletion — recompute vs. precompute trade-off).
+
+Since a runner can usually travel in both directions, this is an undirected weighted graph.
+
+Use Dijkstra's Algorithm.
+
+Why?
+It finds the shortest (fastest) path from one source to all other vertices.
+All path lengths (weights) are positive, so Dijkstra is the correct choice.
+Steps of Dijkstra's Algorithm
+Assign distance 0 to the source (stall zone).
+Assign ∞ (infinity) to all other zones.
+Insert the source into a min-priority queue (binary heap).
+Repeatedly remove the vertex with the smallest distance.
+Update (relax) the distances of its neighboring zones if a shorter path is found.
+Continue until the destination (customer zone) is reached or all reachable zones are processed.
+
+
+Time Complexity
+
+Using a Binary Heap:
+
+Time Complexity: 
+O((V+E)logV)
+
+where:
+
+V = Number of zones
+E = Number of paths
+
+The binary heap efficiently retrieves the next closest zone.
+
+
+Temporary Path Closure
+
+Suppose this path is closed:
+
+Zone A -----X----- Zone B
+
+The graph changes because one edge is removed.
+
+What should the system do?
+
+Remove the corresponding edge from the graph and run Dijkstra's Algorithm again to compute a new shortest route.
+
+Why not precompute all routes?
+Recompute: Suitable when path closures are rare. It always provides the latest shortest path.
+Precompute: Faster for answering queries, but every path closure requires updating many stored routes, making maintenance expensive.
+
+Since the festival has only 30 zones, recomputing with Dijkstra is fast and practical.
+"""
+import pandas as pd
+df=pd.DataFrame([6, 7, 5, 9, 6, 22, 7, 8, 6, 7])
+mean_df=df.mean()
+print(mean_df)
+
+print(df.std())
+
+print(df.median())
+"""
+The 22-minute delivery is an outlier caused by a temporary path closure. It pulls the mean upward, while the median (7 minutes) better represents the typical delivery time. Therefore, the sponsor claim should mention the exceptional delay rather than ignore it.
+
+
+Probability That None of 20 Deliveries Is Late
+
+Probability that a delivery is late:
+
+P(Late)=0.05
+
+Probability that a delivery is not late:
+
+P(Not Late)=1−0.05=0.95
+
+For 20 independent deliveries,
+
+P(None Late)=(0.95)
+20
+(0.95)
+20
+≈0.3585
+or
+35.85%
+"""
+
+
