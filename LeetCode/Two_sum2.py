@@ -20,11 +20,12 @@ class Solution(object):
         for i, num in enumerate(numbers):
             trav = num-target
             
+            # adding +1 to i is required in both here in vs code the output is 1,3 but in leetcode its shows proper output of 1,2
             if trav in dt:
                 return [dt[trav], i+1]
             dt[num] = i+1
 
 
 s = Solution()
-ans = s.twoSum([3, 2, 4], 6)
+ans = s.twoSum([2,7,11,15], 9)
 print(ans)
