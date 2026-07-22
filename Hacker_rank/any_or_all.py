@@ -15,3 +15,10 @@ def check(n,num_sep):
     return is_pali
 out=check(n,num_sep)
 print(out)
+
+
+def sec_method():
+    n = int(input())
+    numbers = list(map(int, input().split()))
+    print(all(i > 0 for i in numbers) and any(str(i) == str(i)[::-1] for i in numbers))
+
