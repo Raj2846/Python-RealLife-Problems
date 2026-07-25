@@ -27,11 +27,15 @@ def opti_solution(s):
     hash={}
     for i in range(len(s)):
         if s[i] in hash:
-            left_p=hash[s[right_p]]+1
-            break
+            
+            #we are making L jump to direct to the index where the duplicate is found so that we skip the string if this max_len is smaller then the max_len calculated 
+            left_p=max(left_p,hash[s[i]]+1)
+
         hash[s[i]]=i
-        right_p+=1
+
         max_len=max(right_p-left_p+1,max_len)
-    print(max_len-1)
+        right_p+=1
+        
+    print(max_len)
     
 opti_solution(s)
