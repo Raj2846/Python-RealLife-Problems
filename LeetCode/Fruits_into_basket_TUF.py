@@ -47,8 +47,7 @@ def opti(arr):
             
         #we are checking that the if the length is greater then 2 then we increment the left_p and decrease the frequency of that element in the dictionary and contiue if the frequency becomes 0 pop that item so that the length of the dictionary decreases and satisfy the condition
         if len(st) > 2:
-            while len(st)>2:
-                
+            # while len(st)>2:
                 #decreasing frequency
                 st[arr[left_p]]=st[arr[left_p]]-1
                 
