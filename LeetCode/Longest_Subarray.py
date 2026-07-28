@@ -22,6 +22,7 @@ def longest_subarray(arr,k):
         #incrementing r to get the maxlength < k i.e comparing all posibilities
         r+=1
     print(maxlen)
+            
     
 def opti_longest_sunarray(arr,k):
     l,r,sum,maxlen = 0,0,0,0

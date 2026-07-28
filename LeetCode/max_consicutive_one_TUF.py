@@ -51,7 +51,7 @@ def opti(arr,k):
 print(opti(arr,k))
 
 #time com : O(n) space com:O(1)
-def opti(arr,k):
+def opti_more(arr,k):
     left_p=0
     zeroes=0
     max_l=0
