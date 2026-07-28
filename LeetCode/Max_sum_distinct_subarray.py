@@ -28,8 +28,5 @@ class Solution(object):
             
         return max_s
                             
-
-                
-    
 s=Solution()
 print(s.opt_maximumSubarraySum(arr,k))
