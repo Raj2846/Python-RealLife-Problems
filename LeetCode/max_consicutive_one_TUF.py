@@ -68,3 +68,19 @@ def opti_more(arr,k):
             max_l=max(max_l,(right-left_p+1))
     
     return (max_l)
+
+
+def opt_without_k(arr):
+    temp=r=0
+    for i in arr:
+        if i:
+            r+=1
+        else:
+            if r > temp:
+                temp=r
+            r=0
+        
+    if r> temp:
+        temp=r
+    return temp
+    
