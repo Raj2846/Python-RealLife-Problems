@@ -50,13 +50,15 @@ def lengthOfLongestSubstring(s):
 
     #enumerate gives both the value and the index of the element makes the work easy ,first index then value
     for right, ch in enumerate(s):
-        if ch in seen:
+        if ch in seen and seen[ch] >= left:
             #if ch in hash update the left to the ch index
-            left = max(left, seen[ch] + 1)
+            left =seen[ch]+1
 
         #if not insert into hash
         seen[ch] = right
-        #find max from the length calculated
-        ans = max(ans, right - left + 1)
-
+        
+        # Calculate current window length and update max_len
+        current_len = right - left + 1
+        if current_len > max_len:
+            max_len = current_len
     return ans
