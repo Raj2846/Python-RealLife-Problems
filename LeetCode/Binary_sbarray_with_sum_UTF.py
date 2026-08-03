@@ -13,15 +13,26 @@ Explanation: The 4 subarrays are bolded and underlined below:
 """
 
 nums=[1,0,1,0,1];goal = 2
-def optimal_solution(nums,goal):
-    count=0;left=0;sum_s=0
-    
-    if goal < 0:
-        return 
-    for right in range(len(nums)):
-        sum_s+=nums[right]
-        
-        if sum_s > goal:
-            sum_s=sum_s-nums[left]
-            left+=1
-        count+=(right-left+1)
+class Solution(object):
+    def numSubarraysWithSum(self, nums, goal):
+
+        def atMost(goal):
+            if goal < 0:
+                return 0
+
+            left = 0
+            curr_sum = 0
+            count = 0
+
+            for right in range(len(nums)):
+                curr_sum += nums[right]
+
+                while curr_sum > goal:
+                    curr_sum -= nums[left]
+                    left += 1
+
+                count += right - left + 1
+
+            return count
+
+        return atMost(goal) - atMost(goal - 1)
