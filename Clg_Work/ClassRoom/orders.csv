@@ -1,0 +1,6 @@
+order_id,customer,category,amount,status
+O001,Meera,Electronics,15000,Completed
+O002,Arjun,Books,800,Completed
+O003,Meera,Clothing,3000,Pending
+O004,Meera,Electronics,7000,Completed
+O005,Arjun,Books,,Cancelled
