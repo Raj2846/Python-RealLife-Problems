@@ -1,0 +1,5 @@
+date,region,product,units_sold,revenue
+2026-01-01,North,Laptop,5,250000
+2026-01-01,North,Mouse,20,10000
+2026-01-02,South,Keyboard,15,12000
+2026-01-02,North,Laptop,3,150000
