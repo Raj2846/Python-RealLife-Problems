@@ -19,3 +19,12 @@ def weighted_values(trans,thresh):
         result.append(next(fil))
         
     return result
+
+
+
+transactions = [100, 200, 150, 50, 400, 90, 60]
+threshold = 500
+
+result = weighted_values(transactions, threshold)
+
+print("First 3 exceeding 500:", result)
