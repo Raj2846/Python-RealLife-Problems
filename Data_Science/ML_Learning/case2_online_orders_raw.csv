@@ -1,0 +1,13 @@
+Order_ID,Product,Quantity,Unit_Price,Order_Time,Status,Priority,Category,Rating
+ORD001, Laptop Stand ,2,"1,499.50",05-07-2026 10:30,Delivered,Yes,Electronics,4.5
+ORD002,Wireless Mouse,3,799,05/07/2026 11:15,Delivered,No,Electronics,4
+ORD003,Office Chair,one,6500,06-07-2026 09:00,Shipped,YES,Furniture,4.2
+ORD004,Notebook Pack,5, 350 ,06/07/2026 14:45,Pending,N,Stationery,Not Rated
+ORD005,USB Hub,2,"1,250",bad date,Delivered,Y,Electronics,4.7
+ORD006,Desk Lamp,,1800,07-07-2026 16:20,Cancelled,No,Furniture,3.9
+ORD007,Pen Set,10,250,08/07/2026 12:00,Delivered,FALSE,Stationery,4.1
+ORD008,Bookshelf,1,"8,750",08-07-2026 17:10,Shipped,TRUE,Furniture,4.6
+ORD009,Webcam,2 pcs,3200,09/07/2026 10:05,Delivered,Yes,Electronics,4.8
+ORD010,Marker Pack,6,300,09-07-2026 13:25,Pending,No,Stationery, 4.0 
+ORD011,Router,2,2600,10/07/2026 09:40,Delivered,Y,Electronics,4.3
+ORD012,Storage Cabinet,1,9500,10-07-2026 18:00,Shipped,N,Furniture,4.5
