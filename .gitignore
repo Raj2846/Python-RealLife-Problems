@@ -1,9 +1,11 @@
 venv/
 .venv/
+venv314/
+.venv314/
 env/
 ENV/
 models/
 
-
+.vscode/
 __pycache__/
 *.pyc
