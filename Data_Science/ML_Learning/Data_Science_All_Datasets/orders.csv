@@ -1,0 +1,13 @@
+Order_ID,Order_Date,Product_ID,Region,Quantity,Unit_Price,Customer_Type
+O101,2026-01-05,P01,West,2,500,Regular
+O102,2026-01-07,P02,north,1,1200,New
+O103,2026-01-08,P03,South,3,300,Regular
+O104,2026/01/10,P01,West,1,500,New
+O105,2026-01-12,P04,East,2,800,Regular
+O106,2026-01-15,P02,North,,1200,New
+O107,2026-01-18,P03,South,4,300,Regular
+O108,2026-01-20,P05,West,1,2000,New
+O109,2026-01-22,P04,East,2,800,Regular
+O109,2026-01-22,P04,East,2,800,Regular
+O110,2026-01-25,P02,North,2,1200,Regular
+O111,2026-01-28,P06,West,1,650,New
